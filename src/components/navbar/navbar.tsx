@@ -13,7 +13,7 @@ const Navbar = () => {
             <div className="navbar__navOption navbar--background" onClick={ () => handleClick('Inicio') }>
                 <p className="navbar__text">Inicio</p>
             </div>
-            <div className="navbar__navOption navbar--background" onClick={ () => handleClick('Ubicación y horarios') }>
+            <div className="navbar__navOption navbar--background navbar--activated" onClick={ () => handleClick('Ubicación y horarios') }>
                 <p className="navbar__text">Ubicación & Horarios</p>
             </div>
             <div className="navbar__navOption navbar--background" onClick={ () => handleClick('Manú') }>
