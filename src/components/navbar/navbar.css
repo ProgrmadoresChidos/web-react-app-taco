@@ -1,0 +1,26 @@
+.navbar {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+.navbar__navOption{
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: baseline;
+    cursor: pointer;
+    padding: 0;
+}
+.navbar__text{
+    font-family: arial;
+    font-size: 15px;
+    transition: all .5s;
+    color: rgb(240, 234, 234);
+    padding: 0 95px;
+}
+
+.navbar--background{
+    background: #2b2b2b;
+}
+.navbar__navOption:hover .navbar__text{
+    color: rgba(248, 248, 248, 0.342);
+}
