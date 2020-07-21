@@ -1,5 +1,6 @@
 .navbar {
     display: inline-flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 }
@@ -9,13 +10,15 @@
     align-items: baseline;
     cursor: pointer;
     padding: 0;
+    margin: 0px 2px 2px;
+    transition: .5s;
 }
 .navbar__text{
     font-family: arial;
     font-size: 15px;
-    transition: all .5s;
+    padding: 0 98px;    
     color: rgb(240, 234, 234);
-    padding: 0 95px;
+    transition: all .5s;
 }
 
 .navbar--background{
@@ -23,4 +26,8 @@
 }
 .navbar__navOption:hover .navbar__text{
     color: rgba(248, 248, 248, 0.342);
+    
+}
+.navbar__navOption:hover{
+    box-shadow: 0 0px 5px rgba(248, 248, 248, 0.342);
 }
