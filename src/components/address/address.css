@@ -67,7 +67,7 @@
     font-family: var(--font-family-sans);
     font-size: 12px;
     text-decoration: none;
-    padding: 2vh 5vh;
+    padding: .8em 2em;
     color: var(--color-text-black);
     border: 2px solid var(--color-text-black);
     background-color: var(--color-text-white);
