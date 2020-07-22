@@ -8,8 +8,7 @@ const Navbar = () => {
     }
 
     return (
-        // <div>
-        <div className="navbar navbar--background">
+        <header className="navbar navbar--background">
             <div className="navbar__contentWrapper">
                 <div className="navbar__navOption navbar--background" onClick={() => handleClick('Inicio')}>
                     <p className="navbar__text">Inicio de Aplicación</p>
@@ -21,8 +20,7 @@ const Navbar = () => {
                     <p className="navbar__text">Menú Principal</p>
                 </div>
             </div>
-        </div>
-        // </div>
+        </header>
     );
 };
 
