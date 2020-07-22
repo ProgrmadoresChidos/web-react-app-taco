@@ -1,0 +1,31 @@
+.footer {
+  height: 100px;
+  display: flex;
+}
+
+.footer--background {
+  background-color: #000;
+}
+
+.footer__content {
+  flex: 1;
+  color: white;
+}
+
+.footer__content--alignRight {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+.footer__content--alignLeft {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+.footer__content__contactForm {
+  display: flex;
+  flex-direction: column;
+}
+.footer__content__contactForm__fields{
+  display: flex;
+}
