@@ -12,7 +12,12 @@ type InputState = {
 };
 
 export default class Input extends Component<InputProps, InputState> {
-	constructor(props) {
+	static defaultProps = {
+		style: {},
+		placeholder: '',
+	}
+
+	constructor(props: InputProps) {
 		super(props);
 		this.state = {
 			value: '',
