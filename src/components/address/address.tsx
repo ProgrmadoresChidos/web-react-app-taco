@@ -28,6 +28,9 @@ export const Address: FunctionComponent<IDatoNegocio> = ( { address, phoneNumber
                         <p className="location__address_p">Domingo 08:00PM –11:00PM</p>
                     </div>
                 </div>
+                <div className="location__moreInfo">
+                    <a href="/" className="location__button">Más información</a>
+                </div>
             </div>
         </div>
     )
