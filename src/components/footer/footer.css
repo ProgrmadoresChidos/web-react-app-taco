@@ -1,5 +1,4 @@
 .footer {
-  height: 100px;
   display: flex;
 }
 
@@ -12,15 +11,19 @@
   color: white;
 }
 
+.footer__content--paddingVertical {
+  padding: 40px 0px;
+}
+
 .footer__content--alignRight {
   display: flex;
   justify-content: flex-end;
-  padding-right: 10px;
+  padding-right: 30px;
 }
 .footer__content--alignLeft {
   display: flex;
   justify-content: flex-start;
-  padding-left: 10px;
+  padding-left: 30px;
 }
 .footer__content__contactForm {
   display: flex;
