@@ -35,7 +35,7 @@ const Footer = () => {
                 marginRight: 10,
               }}
             />
-            <button>Unirse</button>
+            <button className="footer__contact__form--button footer--background footer--textColor">Unirse</button>
           </div>
         </div>
       </div>
