@@ -1,19 +1,8 @@
-import React from 'react'
+import React from 'react';
 import './address.css';
 
-export function Address() {
-
-    interface datoNegocio {
-        address: string;
-        phoneNumber: string;
-        email: string;
-        horarios: [ 
-            {
-                dias: string,
-            }
-        ]
-    }
-
+export function Address( props ) {
+    
     return (
         <div className="location">
             <div className="location__contentWrapper">
@@ -27,7 +16,7 @@ export function Address() {
                 </div>
                 <div className="location__container">
                     <div className="location__container_direction">
-                        <span className="location__address_span">Dirección</span>
+                        <span className="location__address_span">Dirección </span>
                         <p className="location__address_p">Av. Los Rosales 122</p>
                         <p className="location__address_p">28021, Madrid.</p>
                         <p className="location__address_p">info@misitio.com // Tel: 914-123-456</p>                
