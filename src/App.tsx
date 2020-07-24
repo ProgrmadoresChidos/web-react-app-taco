@@ -9,7 +9,7 @@ import Index from './pages/main-page/index';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App animated fadeIn slow">
       <Navbar />
       <Index />
       {/* <Ubication /> */}
