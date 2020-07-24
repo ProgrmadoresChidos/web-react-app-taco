@@ -4,9 +4,6 @@ import Comer from '../../components/comer/comer';
 import { IDatoNegocio } from '../../models/negocio/IDatoNegocio';
 import { Portada } from '../../components/portada/portada';
 
-// Styles
-import './index.css';
-
 function Index() {
 
     const negocio: IDatoNegocio = {

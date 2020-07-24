@@ -10,13 +10,13 @@ export const Portada = () => {
       <div className="portada">
         <div className="portada__wrapper">
           <div className="portada__firstTitle">
-            <p>La</p>
+            <p className="portada__text">La</p>
           </div>
           <div className="portada__secondTitle">
-            <p>App del taco</p>
+            <p className="portada__text">App del taco</p>
           </div>
           <div className="portada__thirdTitle">
-            <p>Aguascalientes</p>
+            <p className="portada__text">Aguascalientes</p>
           </div>
         </div>
       </div>
