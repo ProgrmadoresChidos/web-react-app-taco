@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import './address.css';
 import { IDatoNegocio } from '../../models/negocio/IDatoNegocio';
 
-export const Address: FunctionComponent<IDatoNegocio> = ( { address, phoneNumber, email, horarios } ) => {
+const Address: FunctionComponent<IDatoNegocio> = ( { address, phoneNumber, email, horarios } ) => {
     return (
         <div className="location">
             <div className="location__contentWrapper">
@@ -35,4 +35,5 @@ export const Address: FunctionComponent<IDatoNegocio> = ( { address, phoneNumber
         </div>
     )
 }
+export default Address;
 

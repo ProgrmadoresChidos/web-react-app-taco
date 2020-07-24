@@ -3,8 +3,9 @@ import "./portada.css";
 import { Parallax } from "../parallax/parallax";
 
 export const Portada = () => {
-  const img = "http://localhost:3000/assets/img/portada.jpg";
-
+  // const img = "http://localhost:3000/assets/img/portada.jpg";  // version que pesa 12.1MB
+  const img = "http://localhost:3000/assets/img/portada-min.jpg"; // versión minima que pesa 1.9MB
+  
   return (
     <Parallax backgroundImage={img}>
       <div className="portada">
