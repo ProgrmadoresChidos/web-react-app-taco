@@ -1,29 +1,20 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import Comer from '../../components/comer/comer';
-import { IDatoNegocio } from '../../models/negocio/IDatoNegocio';
 import { Portada } from '../../components/portada/portada';
-import Address from '../../components/address/address';
+import Description from '../../components/description/description';
 
 
 function Index() {
 
-    const negocio: IDatoNegocio = {
-        address: "hola mundo",
-        phoneNumber: "string",
-        email: "string",
-        horarios: [
-            {
-                dias: "string",
-            }
-        ]
-    }
-
     return (
         <div className="body">
             <Portada />
-            <Address address={negocio.address} phoneNumber={negocio.phoneNumber} email={negocio.email} horarios={negocio.horarios} />
+            <Description tittle="Nuestra Historia" moreInfo="PASIÓN POR PIZZA" hasButton={ true } bottonText="Contactanos" path="/"/>
             <Comer />
-            <Address address={negocio.address} phoneNumber={negocio.phoneNumber} email={negocio.email} horarios={negocio.horarios} />
+            <Description tittle="Ubicación & Horarios" 
+                        moreInfo="¡DESCUBRE UN SABOR INOLVIDABLE!"
+                        hasButton={ true } path="/ubicacion"
+                        bottonText="Más Información"/>
         </div>
     )
 }

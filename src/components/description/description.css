@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     justify-content: space-around;
+    margin-bottom: 10px;
 }
 .location__moreInfo{
     display: flex;
@@ -50,8 +51,10 @@
 .location__subtittle_span{
     font-family: var(--font-family-fantasy);
     color: var(--color-text-black);
-    font-stretch: ultra-expanded;
-    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 32px;
+    margin: 40px;
 }
 .location__address_span{
     font-family: var(--font-family-sans);

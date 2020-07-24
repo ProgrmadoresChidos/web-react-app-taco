@@ -1,18 +1,26 @@
 import React, { FunctionComponent } from 'react';
-import './address.css';
-import { IDatoNegocio } from '../../models/negocio/IDatoNegocio';
+import './description.css';
+// import { IDatoNegocio } from '../../models/negocio/IDatoNegocio';
 
-const Address: FunctionComponent<IDatoNegocio> = ( { address, phoneNumber, email, horarios } ) => {
+type DescProps = {
+    tittle: string;
+    moreInfo: string;
+    path?: string;
+    hasButton?: boolean;
+    bottonText?: string;  
+}
+
+const Description: FunctionComponent<DescProps> = ( { tittle, moreInfo, path = "/", hasButton = false, bottonText = "" } ) => {
     return (
         <div className="location">
             <div className="location__contentWrapper">
                 <div className="location__tittle">
                     <div className="location__tittle_background">
-                        <span className="location__tittle_span">Ubicación & Horarios</span>
+                        <span className="location__tittle_span">{ tittle }</span>
                     </div>
                 </div>
                 <div className="location__subTittle">
-                    <p className="location__subtittle_span">¡Descubre un sabor inolvidable!</p>
+                    <p className="location__subtittle_span">{ moreInfo }</p>
                 </div>
                 <div className="location__container">
                     <div className="location__container_direction">
@@ -28,12 +36,14 @@ const Address: FunctionComponent<IDatoNegocio> = ( { address, phoneNumber, email
                         <p className="location__address_p">Domingo 08:00PM –11:00PM</p>
                     </div>
                 </div>
-                <div className="location__moreInfo">
-                    <a href="/" className="location__button">Más información</a>
-                </div>
+                { hasButton &&
+                    <div className="location__moreInfo">
+                        <a href={ path } className="location__button">{ bottonText }</a>
+                    </div>
+                }
             </div>
         </div>
     )
 }
-export default Address;
+export default Description;
 
