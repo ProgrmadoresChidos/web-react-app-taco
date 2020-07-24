@@ -1,0 +1,35 @@
+.content {
+  display: flex;
+  width: 60%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 75px 0;
+}
+
+.content__square {
+  flex: 1;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content__square__diamond {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  border: 10px solid #fff;
+  transform: rotate(45deg);
+}
+
+.content__square--bottom {
+  align-self: flex-end;
+}
+
+.conent__square__text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+}

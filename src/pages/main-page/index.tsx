@@ -1,14 +1,18 @@
 import React from 'react'
 import { Address } from '../../components/address/address';
+import Comer from '../../components/comer/comer';
 import { IDatoNegocio } from '../../models/negocio/IDatoNegocio';
+
+// Styles
+import './index.css';
 
 function Index() {
 
-    const negocio : IDatoNegocio = {
+    const negocio: IDatoNegocio = {
         address: "hola mundo",
         phoneNumber: "string",
         email: "string",
-        horarios: [ 
+        horarios: [
             {
                 dias: "string",
             }
@@ -16,8 +20,9 @@ function Index() {
     }
 
     return (
-        <div>
-            <Address address = { negocio.address } phoneNumber = { negocio.phoneNumber} email = { negocio.email} horarios = { negocio.horarios } />
+        <div className="body">
+            <Comer />
+            <Address address={negocio.address} phoneNumber={negocio.phoneNumber} email={negocio.email} horarios={negocio.horarios} />
         </div>
     )
 }
