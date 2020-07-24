@@ -2,7 +2,8 @@ import React, { Suspense } from 'react'
 import Comer from '../../components/comer/comer';
 import { IDatoNegocio } from '../../models/negocio/IDatoNegocio';
 import { Portada } from '../../components/portada/portada';
-const Address = React.lazy(() =>  import ('../../components/address/address') );
+import Address from '../../components/address/address';
+
 
 function Index() {
 
@@ -19,12 +20,10 @@ function Index() {
 
     return (
         <div className="body">
-            <Suspense fallback={<h1>Loading........</h1>}>
-                <Portada />
-                <Address address={negocio.address} phoneNumber={negocio.phoneNumber} email={negocio.email} horarios={negocio.horarios} />
-                <Comer />
-                <Address address={negocio.address} phoneNumber={negocio.phoneNumber} email={negocio.email} horarios={negocio.horarios} />
-            </Suspense>
+            <Portada />
+            <Address address={negocio.address} phoneNumber={negocio.phoneNumber} email={negocio.email} horarios={negocio.horarios} />
+            <Comer />
+            <Address address={negocio.address} phoneNumber={negocio.phoneNumber} email={negocio.email} horarios={negocio.horarios} />
         </div>
     )
 }
