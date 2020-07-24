@@ -1,0 +1,48 @@
+.portada{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.portada__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    flex: 1;
+}
+.portada__firstTitle{
+    /* align-self: center; */
+    font-family: var(--font-family-cursive);
+    font-size: 45px;
+    font-weight: bold;
+    font-stretch: ultra-expanded;
+    color : var(--color-white);
+}
+.portada__secondTitle{
+    font-family: var(--font-family-fantasy);
+    font-weight: bold;
+    font-stretch: ultra-expanded;
+    font-size: 100px;
+    color: var(--color-white);
+}
+.portada__thirdTitle{
+    /* justify-items: center; */
+    font-family: var(--font-family-sans);
+    font-weight: bold;
+    font-stretch: ultra-expanded;
+    color : var(--color-white);
+    font-size: 30px;
+}
+
+p{
+    margin: 0;
+}
+
+:root{
+    --font-family-sans : sans-serif;
+    --font-family-cursive : "Brush Script MT";
+    --font-family-fantasy : fantasy;
+    --color-white : white;
+}

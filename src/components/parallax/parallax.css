@@ -5,3 +5,7 @@
     background-size: cover;
     height: 100vh;
 }
+.separador{
+    height: 10px;
+    background-color: #2b2b2b;
+}
