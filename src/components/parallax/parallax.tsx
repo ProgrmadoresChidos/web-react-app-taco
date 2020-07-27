@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from "react";
-import "./parallax.css";
+
+// Styles
+import styles from "./parallax.module.css";
 
 type ParallaxProps = {
   backgroundImage: string;
@@ -14,7 +16,7 @@ export const Parallax: FunctionComponent<ParallaxProps> = ({
   return (
     <>
       <div
-        className="parallax"
+        className={`${styles.parallax} animated fadeIn slow`}
         style={{
           backgroundImage: `url(${backgroundImage})`,
           ...style,
@@ -22,7 +24,7 @@ export const Parallax: FunctionComponent<ParallaxProps> = ({
       >
         {children}
       </div>
-      <div className="separador"></div>
+      <div className={styles.separador}></div>
     </>
   );
 };

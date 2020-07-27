@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+
 // Styles
-import './input.css';
+import styles from './input.module.css';
 
 type InputProps = {
 	style?: Object,
@@ -33,7 +34,7 @@ export default class Input extends Component<InputProps, InputState> {
 		const { value } = this.state;
 		return (
 			<input
-				className="input"
+				className={styles.input}
 				type="text"
 				value={value}
 				onChange={this.handleChange}
