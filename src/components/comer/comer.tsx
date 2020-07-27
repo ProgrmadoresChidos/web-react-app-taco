@@ -4,7 +4,7 @@ import React from 'react';
 import { Parallax } from '../parallax/parallax';
 
 // Styles
-import './comer.css';
+import styles from './comer.module.css';
 
 export default function Comer() {
   return (
@@ -15,16 +15,16 @@ export default function Comer() {
         justifyContent: 'center',
       }}
     >
-      <div className="content">
-        <div className="content__square content__square--bottom">
-          <div className="content__square__diamond" />
-          <p className="conent__square__text">Comer aqui</p>
+      <div className={styles.content}>
+        <div className={`${styles.content__square} ${styles.content__square_bottom}`}>
+          <div className={styles.content__square__diamond} />
+          <p className={styles.conent__square__text}>Comer aqui</p>
         </div>
-        <div className="content__square">
-          <div className="content__square__diamond" />
-          <p className="conent__square__text">Pedir para llevar</p>
+        <div className={styles.content__square}>
+          <div className={styles.content__square__diamond} />
+          <p className={styles.conent__square__text}>Pedir para llevar</p>
         </div>
       </div>
-    </Parallax>
+    </Parallax >
   )
 }
