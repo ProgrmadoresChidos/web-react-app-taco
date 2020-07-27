@@ -14,7 +14,7 @@ export const Parallax: FunctionComponent<ParallaxProps> = ({
   return (
     <>
       <div
-        className="parallax"
+        className="parallax animated fadeIn slow"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           ...style,
