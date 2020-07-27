@@ -24,7 +24,7 @@
   transform: rotate(45deg);
 }
 
-.content__square--bottom {
+.content__square_bottom {
   align-self: flex-end;
 }
 
