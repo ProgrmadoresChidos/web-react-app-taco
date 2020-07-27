@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.footer--background {
+.footer_background {
   background-color: #000;
 }
 
@@ -10,7 +10,7 @@
   flex: 1;
 }
 
-.footer--paddingVertical {
+.footer_paddingVertical {
   padding: 40px 0px;
 }
 
@@ -42,7 +42,7 @@
   font-size: 14px;
 }
 
-.footer--alignLeft {
+.footer_alignLeft {
   display: flex;
   justify-content: flex-start;
   padding-left: 30px;
@@ -57,17 +57,17 @@
   display: flex;
 }
 
-.footer__contact__form--text {
+.footer__contact__form_text {
   font-weight: bold;
   font-size: 18px;
 }
 
-.footer__contact__form--button {
+.footer__contact__form_button {
   border-radius: 0px;
   border: 2px solid #fff;
   padding: 0 20px;
 }
 
-.footer--textColor {
+.footer_textColor {
   color: white;
 }
