@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "App Taco",
+  "name": "La App del Taco",
+  "description": "Aplicación para hacer pedidos de comida",
   "icons": [
     {
       "src": "favicon.ico",
