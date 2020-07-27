@@ -8,15 +8,15 @@ const Navbar = () => {
     }
 
     return (
-        <header className={ `${style.navbar} ${style.navbar__background}` }>
+        <header className={ `${style.navbar} ${style.navbar_background}` }>
             <div className={ style.navbar__contentWrapper }>
-                <div className={ `${style.navbar__navOption} ${style.navbar__background} ` } onClick={() => handleClick('Inicio')}>
+                <div className={ `${style.navbar__navOption} ${style.navbar_background} ` } onClick={() => handleClick('Inicio')}>
                     <p className={ style.navbar__text }>Inicio</p>
                 </div>
-                <div className={ `${style.navbar__navOption} ${style.navbar__background} ${style.navbar__activated}` } onClick={() => handleClick('Ubicación y horarios')}>
+                <div className={ `${style.navbar__navOption} ${style.navbar__background} ${style.navbar_activated}` } onClick={() => handleClick('Ubicación y horarios')}>
                     <p className={ style.navbar__text }>Ubicación & Horarios</p>
                 </div>
-                <div className={ `${style.navbar__navOption} ${style.navbar__background}` } onClick={() => handleClick('Manú')}>
+                <div className={ `${style.navbar__navOption} ${style.navbar_background}` } onClick={() => handleClick('Manú')}>
                     <p className={ style.navbar__text }>Menú</p>
                 </div>
             </div>
