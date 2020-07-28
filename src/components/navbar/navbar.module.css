@@ -17,6 +17,7 @@
     cursor: pointer;
     margin: 0px 2px 2px;
     transition: .5s;
+    text-decoration: none;
 } 
 .navbar_background{
     background: #2b2b2b;
@@ -31,6 +32,7 @@
 .navbar__navOption:hover .navbar__text{
     color: rgba(248, 248, 248, 0.342);
 }
+
 .navbar__navOption:hover{
     box-shadow: 0 0px 5px rgba(248, 248, 248, 0.342);
 }
