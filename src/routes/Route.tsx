@@ -1,12 +1,6 @@
-import React, { Component, FunctionComponent } from 'react'
-import { Route, Redirect } from 'react-router-dom';
+import React from 'react'
+import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-// type PorpsRoutes {
-//     component: Component,
-//     isPrivate,
-//     rest
-// }
 
 export default function RouteWrapper ({ component, isPrivate = false, ...rest}) {
 

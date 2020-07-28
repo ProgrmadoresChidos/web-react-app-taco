@@ -1,7 +1,10 @@
 import React from 'react'
 import { Switch } from 'react-router-dom';
-import Index from '../pages/main-page';
-import Route from '../routes/Route';
+//RoutesWapper
+import Route from './Route';
+
+// pages
+import Index from '../pages/main-page'; 
 import Ubication from '../pages/ubication-more-info/ubication';
 
 export default function Routes() {
