@@ -1,0 +1,25 @@
+.menuSection {
+
+}
+
+.menuSection__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuSection__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menuSection_line {
+  background-color: #000;
+  width: 35px;
+  height: 1px;
+}
+
+.menuSection_text {
+  text-align: center;
+}
