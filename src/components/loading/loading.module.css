@@ -1,0 +1,13 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+}
+.content__loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

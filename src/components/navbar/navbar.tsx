@@ -1,9 +1,27 @@
-import React from 'react'
+import React from "react";
+import style from "./navbar.module.css";
 
-export function navbar() {
+const Navbar = () => {
+
+    const handleClick = (cadena: string) => {
+        console.info(cadena);
+    }
+
     return (
-        <div>
-            
-        </div>
-    )
-}
+        <header className={ `${style.navbar} ${style.navbar_background}` }>
+            <div className={ style.navbar__contentWrapper }>
+                <div className={ `${style.navbar__navOption} ${style.navbar_background} ` } onClick={() => handleClick('Inicio')}>
+                    <p className={ style.navbar__text }>Inicio</p>
+                </div>
+                <div className={ `${style.navbar__navOption} ${style.navbar__background} ${style.navbar_activated}` } onClick={() => handleClick('Ubicación y horarios')}>
+                    <p className={ style.navbar__text }>Ubicación & Horarios</p>
+                </div>
+                <div className={ `${style.navbar__navOption} ${style.navbar_background}` } onClick={() => handleClick('Manú')}>
+                    <p className={ style.navbar__text }>Menú</p>
+                </div>
+            </div>
+        </header>
+    );
+};
+
+export default Navbar;

@@ -1,0 +1,16 @@
+.input {
+  /* background-color: #222222; */
+  background-color: transparent;
+  border: 4px solid #fff;
+  padding: 10px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.input::placeholder {
+  color: #fff;
+}
+
+.input:focus {
+  outline: none;
+}

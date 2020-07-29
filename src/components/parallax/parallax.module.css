@@ -1,0 +1,12 @@
+.parallax {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    opacity: 1;
+}
+.separador{
+    height: 10px;
+    background-color: #2b2b2b;
+}
