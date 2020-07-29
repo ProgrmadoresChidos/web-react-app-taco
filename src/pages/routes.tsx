@@ -5,11 +5,11 @@ import Route from '../routes/Route';
 import Ubication from './ubication-more-info/ubication';
 
 export default function Routes({ path }) {
-    
+
     return (
         <Switch>
-            <Route path={`${path}`} component = { Index }/>
-            <Route path={`${path}/ubicacion`} component = { Ubication }/>
+            <Route path={`${path}`} exact component={Index} />
+            <Route path={`${path}/ubicacion`} component={Ubication} />
         </Switch>
     )
 }
