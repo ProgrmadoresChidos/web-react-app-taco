@@ -28,6 +28,7 @@ const ITEMS = [
 export const Menu: FunctionComponent = () => {
   return (
     <div className={styles.menu}>
+      <div className={styles.menu_backgroundImage} />
       <div className={styles.menu__wrapper}>
         <div className={styles.menu__title}>
           <h3>Menu</h3>
@@ -35,6 +36,11 @@ export const Menu: FunctionComponent = () => {
         </div>
         <MenuSection
           title="Tacos"
+          description="Esta es una sección de tu menú, personalízala como quieras. Haz un listado de tus entradas, bebidas, pastas o cualquier otro plato."
+          items={ITEMS}
+        />
+        <MenuSection
+          title="Tortas"
           description="Esta es una sección de tu menú, personalízala como quieras. Haz un listado de tus entradas, bebidas, pastas o cualquier otro plato."
           items={ITEMS}
         />

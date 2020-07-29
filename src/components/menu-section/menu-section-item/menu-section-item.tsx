@@ -14,7 +14,7 @@ export const MenuSectionItem: FunctionComponent<MenuSectionItemProps> = ({ name,
     <div className={styles.menuSectionItem}>
       <h6>{name}</h6>
       <p className={styles.menuSectionItem_text}>{description}</p>
-      <p>{precio}</p>
+      <p>${precio}</p>
     </div>
   )
 }
