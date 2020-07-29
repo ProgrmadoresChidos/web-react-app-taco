@@ -11,7 +11,7 @@ export default function Index() {
     return (
         <div className="App animated fadeIn">
             <Navbar url={url}/>
-            <Routes path={url} />
+            <Routes path={path} />
             <Footer />
         </div>
     )
