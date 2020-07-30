@@ -14,7 +14,6 @@ const Maps: FunctionComponent<MapsProps> = ({ locales }) => {
 
     // const [center, setCenter] = useState({ lat: 21.885516, lng: -102.291693 });
     // const [zoom, setZoom] = useState(12);
-    const center = { lat: 21.885516, lng: -102.291693 };
     const zoom = 12;
     const API_KEY = environment.GOOGLE_API_KEY;
 
@@ -24,7 +23,7 @@ const Maps: FunctionComponent<MapsProps> = ({ locales }) => {
                 <div className={style.maps}>
                     <GoogleMapReact
                         bootstrapURLKeys={{ key: API_KEY }}
-                        defaultCenter={center}
+                        defaultCenter={environment.center}
                         defaultZoom={zoom}
                     >
                         {locales.map((local, i) => <Marker key={i} lat={local.geoLocalización.lat} lng={local.geoLocalización.lng} name={local.nombre}></Marker>)}
