@@ -1,36 +1,46 @@
 import React, { FunctionComponent } from 'react';
-import style from './address.module.css';
-import { IDatoNegocio } from '../../models/negocio/IDatoNegocio';
+import { NavLink } from 'react-router-dom';
 
-const Address: FunctionComponent<IDatoNegocio> = ( { address, phoneNumber, email, horarios } ) => {
+import style from './address.module.css';
+import { Ubicaciones } from '../../models/marks/ubicaciones';
+import AddressSection from '../address-section/address-section';
+
+type PropsAddress = {
+    locales: Ubicaciones[];
+    subTittle: string;
+    tittle?: {
+        show: boolean,
+        text: string
+    };
+    button?: {
+        show: boolean,
+        text: string,
+        path: string
+    };
+}
+
+const Address: FunctionComponent<PropsAddress> = ({ locales, subTittle, tittle = { show: false, text: "" }, button = { show: false, text: "", path: "/inicio" } }) => {
     return (
-        <div className={ style.location }>
-            <div className={ style.location__contentWrapper }>
-                <div className={ style.location__tittle }>
-                    <div className={ style.location__tittle_background }>
-                        <span className={ style.location__tittle_span }>Ubicación & Horarios</span>
+        <div className={style.location}>
+            <div className={style.location__contentWrapper}>
+                {tittle.show &&
+                    <div className={style.location__tittle}>
+                        <div className={style.location__tittle_background}>
+                            <span className={style.location__tittle_span}>{tittle.text}</span>
+                        </div>
                     </div>
+                }
+                <div className={style.location__subTittle}>
+                    <p className={style.location__subtittle_span}>{subTittle}</p>
                 </div>
-                <div className={ style.location__subTittle }>
-                    <p className={ style.location__subtittle_span }>¡Descubre un sabor inolvidable!</p>
-                </div>
-                <div className={ style.location__container }>
-                    <div className={ style.location__container_direction }>
-                        <span className={ style.location__address_span }>Dirección</span>
-                        <p className={ style.location__address_p }>Av. Los Rosales 122</p>
-                        <p className={ style.location__address_p }>28021, Madrid.</p>
-                        <p className={ style.location__address_p }>info@misitio.com // Tel: 914-123-456</p>                
+                {locales.map((local, i) => ( 
+                    <AddressSection key={i} local= {local}/>
+                ))}
+                {button.show &&
+                    <div className={style.location__moreInfo}>
+                        <NavLink to={button.path} className={style.location__button}>{button.text}</NavLink>
                     </div>
-                    <div className={ style.location__container_direction }>
-                        <span className= { style.location__address_span }>Horarios</span>
-                        <p className= { style.location__address_p }>Lunes– Viernes 07:00AM – 10:00PM</p>
-                        <p className= { style.location__address_p }>Sábado 09:00AM – 10:00PM</p>
-                        <p className= { style.location__address_p }>Domingo 08:00PM –11:00PM</p>
-                    </div>
-                </div>
-                <div className={ style.location__moreInfo}>
-                    <a href="/" className={ style.location__button }>Más información</a>
-                </div>
+                }
             </div>
         </div>
     )

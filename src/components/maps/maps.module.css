@@ -13,6 +13,6 @@
 .maps{
     display: flex;
     justify-content: center;
-    height: 40vh;
-    width: 80%;
+    height: 50vh;
+    width: 100%;
 }
