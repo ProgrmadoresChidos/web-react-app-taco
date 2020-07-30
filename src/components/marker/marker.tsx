@@ -13,7 +13,6 @@ const Marker: FunctionComponent<MarkerProps> = ({ lat, lng, name }) => {
             <div className={`${style.pin} ${style.bounce}`} title={ name } />
             <div className={style.pulse}></div>
         </div>
-        // `lat: ${lat} lng: ${lng} ${name}`
     )
 }
 

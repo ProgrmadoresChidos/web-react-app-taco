@@ -12,8 +12,6 @@ type MapsProps = {
 
 const Maps: FunctionComponent<MapsProps> = ({ locales }) => {
 
-    // const [center, setCenter] = useState({ lat: 21.885516, lng: -102.291693 });
-    // const [zoom, setZoom] = useState(12);
     const zoom = 12;
     const API_KEY = environment.GOOGLE_API_KEY;
 
