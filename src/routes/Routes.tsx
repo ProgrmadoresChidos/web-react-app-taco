@@ -4,8 +4,6 @@ import { Switch } from 'react-router-dom';
 import Route from './Route';
 
 // pages
-// import Index from '../pages/main-page'; 
-// import Ubication from '../pages/ubication-more-info/ubication';
 import Login from '../login/login';
 import Pages from '../pages/pages';
 

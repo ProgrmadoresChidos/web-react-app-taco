@@ -9,7 +9,7 @@ export default function Index() {
     let { path, url } = useRouteMatch();
 
     return (
-        <div className="App animated fadeIn">
+        <div className="App">
             <Navbar url={url}/>
             <Routes path={path} />
             <Footer />
