@@ -36,4 +36,5 @@ const Address: FunctionComponent<IDatoNegocio> = ( { address, phoneNumber, email
     )
 }
 export default Address;
+// componente para mostrar información
 

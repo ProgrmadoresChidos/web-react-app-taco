@@ -1,19 +1,14 @@
 import React from 'react';
 import './App.css';
-import Footer from './components/footer/footer'
 
-//import components
-import Navbar from './components/navbar/navbar';
-// import Index from './pages/main-page/index';
-import { Menu } from './pages/menu/menu';
+// import Footer from './components/footer/footer'
+// import Navbar from './components/navbar/navbar';
+import Routes from './routes/Routes';
 
 function App() {
   return (
     <div className="App animated fadeIn">
-      <Navbar />
-      <Menu />
-      {/* <Index /> */}
-      <Footer />
+      <Routes />
     </div>
   );
 }
