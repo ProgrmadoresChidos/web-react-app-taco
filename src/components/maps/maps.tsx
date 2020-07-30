@@ -3,6 +3,7 @@ import style from './maps.module.css';
 import GoogleMapReact from 'google-map-react';
 import Marker from '../marker/marker';
 import { IMarks } from '../../models/marks/marks';
+import { environment } from '../../environment/environment';
 
 
 type MapsProps = {
@@ -13,7 +14,7 @@ const Maps: FunctionComponent<MapsProps> = ({ locales }) => {
 
     const [center, setCenter] = useState({ lat: 21.885516, lng: -102.291693 });
     const [zoom, setZoom] = useState(12);
-    const API_KEY = 'AIzaSyD9ojpstGgDd6CI2r8c8UhzEHOo8MKn6pQ';
+    const API_KEY = environment.GOOGLE_API_KEY;
 
     return (
         <div className={style.content}>
