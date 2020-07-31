@@ -6,12 +6,15 @@ import Route from './Route';
 // pages
 import Login from '../login/login';
 import Pages from '../pages/pages';
+import PageNotFound from '../pages/page-not-found/page-not-found';
 
 export default function Routes() {
     return (
         <Switch>
-            <Route path="/inicio" component={ Pages }></Route>
-            <Route path="/login" component={ Login }></Route>
+            <Route path="/" redirect="/inicio" exact component={() => { }} />
+            <Route path="/inicio" component={Pages} />
+            <Route path="/login" component={Login} />
+            <Route path="*" component={PageNotFound} />
         </Switch>
     )
 }
