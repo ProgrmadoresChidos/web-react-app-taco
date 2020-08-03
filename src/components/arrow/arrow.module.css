@@ -1,6 +1,17 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+.container__arrow{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
 .scrollArr{
     cursor: pointer;
-    animation: fadeIn 0.3s;
+    animation: fadeIn 0.8s ease-in;
     transition: opacity 0.5s;
     opacity: .7;
 }

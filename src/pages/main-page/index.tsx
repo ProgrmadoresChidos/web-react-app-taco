@@ -3,7 +3,6 @@ import { useRouteMatch } from 'react-router-dom';
 //components
 import Loading from '../../components/loading/loading';
 import { Ubicaciones } from '../../models/marks/ubicaciones';
-const Arrow = lazy(() => import('../../components/arrow/arrow'));
 const Address = lazy(() => import('../../components/address/address'));
 const Portada = lazy(() => import('../../components/portada/portada'));
 const Comer = lazy(() => import('../../components/comer/comer'));
@@ -51,7 +50,6 @@ function Index() {
                     subTittle="¡DESCUBRE UN SABOR INOLVIDABLE!" 
                     button={{ show: true, text: "Más Información", path: `${url}/ubicacion` }} 
                     tittle={{ show: true, text: "Ubicación & Horarios"}} />
-                <Arrow></Arrow>
             </Loading>
         </div>
     )

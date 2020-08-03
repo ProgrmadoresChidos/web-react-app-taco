@@ -26,8 +26,8 @@ export const MenuSection: FunctionComponent<MenuSectionProps> = ({ title, descri
       </div>
       <div className={styles.menuSection__content}>
         {
-          items.map(item => (
-            <MenuSectionItem name={item.name} description={item.description} precio={item.precio} />
+          items.map((item, i)=> (
+            <MenuSectionItem key={ i } name={item.name} description={item.description} precio={item.precio} />
           ))
         }
       </div>

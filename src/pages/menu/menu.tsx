@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect } from 'react'
 
 // Components
 import { MenuSection } from '../../components/menu-section/menu-section';
@@ -26,6 +26,11 @@ const ITEMS = [
 ]
 
 export const Menu: FunctionComponent = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className={styles.menu}>
       <div className={styles.menu_backgroundImage} />
