@@ -1,0 +1,19 @@
+.scrollArr{
+    cursor: pointer;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.5s;
+    opacity: .7;
+}
+
+.scrollArr:hover {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: .7;
+    }
+}
