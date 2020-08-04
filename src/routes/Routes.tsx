@@ -14,7 +14,7 @@ export default function Routes() {
             <Route path="/" redirect="/inicio" exact component={() => { }} />
             <Route path="/inicio" component={Pages} />
             <Route path="/login" component={Login} />
-            <Route path="*" component={PageNotFound} />
+            <Route component={PageNotFound} />
         </Switch>
     )
 }
