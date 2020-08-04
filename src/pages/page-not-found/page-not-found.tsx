@@ -6,7 +6,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 // Styles
 import styles from './page-not-found.module.css';
 
-export const PageNotFound: FunctionComponent = () => {
+const PageNotFound: FunctionComponent = () => {
 
   const location = useLocation();
   const description = `La pagina ${location.pathname} no la pudimos encontrar.`;
@@ -33,3 +33,5 @@ export const PageNotFound: FunctionComponent = () => {
     </div>
   )
 }
+
+export { PageNotFound as default };
