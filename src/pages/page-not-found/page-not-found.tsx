@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 // Styles
 import styles from './page-not-found.module.css';
 
-export default function PageNotFound({ location, history }) {
-  const description = `La pagina ${location.pathname} no la pudimos encontrar.`
+export const PageNotFound: FunctionComponent = () => {
+
+  const location = useLocation();
+  const description = `La pagina ${location.pathname} no la pudimos encontrar.`;
+
+  const history = useHistory();
   const goBack = () => history.goBack();
+
   return (
     <div className={styles.pageNotFound}>
       <div className={styles.pageNotFound__container}>
