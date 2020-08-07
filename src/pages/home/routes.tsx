@@ -3,7 +3,7 @@ import React from 'react'
 import Index from './spa-pages/main-page/index';
 // import Route from '../../routes/Route';
 import Ubication from './spa-pages/ubication-more-info/ubication';
-import { Menu } from './spa-pages/menu/menu';
+import Menu from './spa-pages/menu';
 import Router from '../../routes/Router';
 
 export default function Routes({ path }) {
