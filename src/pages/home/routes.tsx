@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch } from 'react-router-dom';
-import Index from './main-page/index';
-import Route from '../routes/Route';
-import Ubication from './ubication-more-info/ubication';
-import { Menu } from './menu/menu';
+import Index from './spa-pages/main-page/index';
+import Route from '../../routes/Route';
+import Ubication from './spa-pages/ubication-more-info/ubication';
+import { Menu } from './spa-pages/menu/menu';
 
 export default function Routes({ path }) {
 

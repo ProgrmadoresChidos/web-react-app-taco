@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect } from 'react'
 
 // Components
-import { MenuSection } from '../../components/menu-section/menu-section';
+import { MenuSection } from '../../../../components/menu-section/menu-section';
 
 // Styles
 import styles from './menu.module.css';
