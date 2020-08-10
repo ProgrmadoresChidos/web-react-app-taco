@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouteMatch } from "react-router-dom";
-import Navbar from '../components/navbar/navbar';
-import Footer from '../components/footer/footer';
+import Navbar from '../../components/navbar/navbar';
+import Footer from '../../components/footer/footer';
 import Routes from './routes';
 
 // Styles

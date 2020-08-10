@@ -33,8 +33,8 @@ const Address: FunctionComponent<PropsAddress> = ({ locales, subTittle, tittle =
                 <div className={style.location__subTittle}>
                     <p className={style.location__subtittle_span}>{subTittle}</p>
                 </div>
-                {locales.map((local, i) => ( 
-                    <AddressSection key={i} local= {local}/>
+                {locales.map((local, i) => (
+                    <AddressSection key={i} local={local} />
                 ))}
                 {button.show &&
                     <div className={style.location__moreInfo}>

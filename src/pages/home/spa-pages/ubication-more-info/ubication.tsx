@@ -1,8 +1,8 @@
 import React, { lazy, useEffect } from 'react'
-import { Ubicaciones } from '../../models/marks/ubicaciones';
-import Loading from '../../components/loading/loading';
-const Address = lazy(() => import('../../components/address/address'));
-const Maps = lazy(() => import('../../components/maps/maps'));
+import { Ubicaciones } from '../../../../models/marks/ubicaciones';
+import Loading from '../../../../components/loading/loading';
+const Address = lazy(() => import('../../../../components/address/address'));
+const Maps = lazy(() => import('../../../../components/maps/maps'));
 
 export default function Ubication() {
 
