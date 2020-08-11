@@ -1,34 +1,19 @@
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle, faCopyright } from '@fortawesome/free-solid-svg-icons';
+
 import style from './signup.module.css';
 
 const Signup = () => {
 
-    const validate = values => {
-        const errors: any[] = [];
-        if (!values.firstName) {
-            errors.push('Required');
-        } else if (values.firstName.length > 15) {
-            errors.push('Must be 15 characters or less');
-        }
-
-        if (!values.lastName) {
-            errors.push('Required');
-        } else if (values.lastName.length > 20) {
-            errors.push('Must be 20 characters or less');
-        }
-
-        if (!values.email) {
-            errors.push('Required');
-        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-            errors.push('Invalid email address');
-        }
-
-        console.log(errors)
-
-        return errors;
-    };
+    const icon = <FontAwesomeIcon
+        icon={faUserCircle}
+        size="3x"
+        className={style.Form__icon}
+    />;
+    const icon_copyRights = <FontAwesomeIcon icon={faCopyright} />;
 
     return (
         <div className={`${style.container} ${style.container_position}`}>
@@ -38,7 +23,8 @@ const Signup = () => {
                         firstName: '',
                         lastName: '',
                         email: '',
-                        password: ''
+                        password: '',
+                        save: false
                     }}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
@@ -48,7 +34,10 @@ const Signup = () => {
                     }}
                 >
                     <Form className={`${style.Form} ${style.Form__position}`}>
-                        <div className={`${style.Form__container} ${style.Form__tittle_position}`}>
+                        <div className={`${style.Form__container} ${style.Form__position_center}`}>
+                            {icon}
+                        </div>
+                        <div className={`${style.Form__container} ${style.Form__position_center}`}>
                             <h2 className={`${style.Form__tittle}`}>Registro</h2>
                         </div>
                         <div className={`${style.Form__container}`}>
@@ -56,7 +45,6 @@ const Signup = () => {
                                 <Field
                                     id="firstName"
                                     name="firstName"
-                                    placeholder="firstName"
                                     type="text"
                                     required
                                     className={` ${style.Form__input} ${style.Form__input_event} `}
@@ -67,7 +55,6 @@ const Signup = () => {
                                 <Field
                                     id="lastName"
                                     name="lastName"
-                                    placeholder="lastName"
                                     type="text"
                                     required
                                     className={` ${style.Form__input} ${style.Form__input_event} `}
@@ -80,7 +67,6 @@ const Signup = () => {
                                 <Field
                                     id="email"
                                     name="email"
-                                    placeholder="email"
                                     type="text"
                                     required
                                     className={` ${style.Form__input} ${style.Form__input_event} `}
@@ -91,19 +77,30 @@ const Signup = () => {
                                 <Field
                                     id="password"
                                     name="password"
-                                    placeholder="password"
-                                    type="text"
+                                    type="password"
                                     required
                                     className={` ${style.Form__input} ${style.Form__input_event} `}
                                 />
                                 <label htmlFor="password" className={`${style.Form_label}`}>Contraseña</label>
                             </div>
                         </div>
+                        <div className={`${style.Form__container} ${style.Form__checkbox_position}`}>
+                            <label htmlFor="save" className={`${style.Form__checkbox_text}`}>
+                                <Field type="checkbox" id="save" name="save" className={`${style.Form__checkbox}`} />
+                                <span className={`${style.Form__checkmark}`}></span>
+                                Recordar credenciales?
+                            </label>
+                        </div>
                         <div className={style.Form__container}>
                             <button type='submit' className={style.Form__button}>Registrar</button>
                         </div>
                         <div className={`${style.Form__container} ${style.Form__nav_position} `}>
                             <NavLink className={`${style.Form__nav}`} to="/login">Tienes una cuenta? Inicia Sesión</NavLink>
+                        </div>
+                        <div className={`${style.Form__container} ${style.Form__position_center}`}>
+                            <p className={`${style.Form_copyrights}`}>
+                                {icon_copyRights} 2023 La App del taco.
+                            </p>
                         </div>
                     </Form>
                 </Formik>

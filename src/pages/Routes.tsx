@@ -1,14 +1,11 @@
 import React from 'react'
-// import { Switch } from 'react-router-dom';
 import Router from '../routes/Router';
-//RoutesWapper
-// import Route from './Route';
 
 // pages
 import Login from './login';
 import Pages from './home';
 import PageNotFound from './page-not-found';
-import Signup from './signup/signup';
+import Signup from './signup';
 
 const ROUTES = [
     {
