@@ -47,6 +47,7 @@
 .Form__input{
     font-weight: bold;
     color: white;
+    outline: none;
     background-color: transparent;
     border: 1px solid rgba(56, 54, 54, 0.76);
     transition: .3s ease-in;
