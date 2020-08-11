@@ -8,6 +8,7 @@ import Router from '../routes/Router';
 import Login from './login';
 import Pages from './home';
 import PageNotFound from './page-not-found';
+import Signup from './signup/signup';
 
 const ROUTES = [
     {
@@ -23,6 +24,10 @@ const ROUTES = [
     {
         path: "/login",
         component: Login,
+    },
+    {
+        path: '/signup',
+        component: Signup
     },
     {
         component: PageNotFound,
