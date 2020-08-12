@@ -62,12 +62,12 @@
     color: white;
     margin: 0;
     padding: 0;
+    margin-left: 19px;
     -webkit-animation-duration: .5s;
     animation-duration: .5s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    margin-left: 19px;
-    transition: .5s;
+    transition: .6s ease-in-out;
 }
 .Form__button{
     font-family: sans-serif;
@@ -137,7 +137,6 @@
     position: absolute;
     display: none;
 }
-
 .Form__checkmark:after {
     left: 6px;
     top: 0px;
@@ -172,8 +171,11 @@
 .Form__input_event:focus ~ .Form_label,
 .Form__input_event:valid ~ .Form_label
 {
-    animation-name: toTop;
+    color: rgb(88, 86, 86);
+    transform: translateY(-30px);
+    font-size: 14px;
 }
+
 .Form__input_event:placeholder-shown{
     color: transparent;
 }
@@ -182,25 +184,4 @@
 }
 .Form__input_event:hover{
     border: 1px solid rgba(252, 251, 251, 0.904);;
-}
-@keyframes toTop {
-    from{
-        color: rgb(248, 242, 242);
-        transform: translateY(-1px);
-    }
-    to{
-        color: rgb(88, 86, 86);
-        transform: translateY(-30px);
-    }
-}
-
-@keyframes toDown{
-    from{
-        color: white;
-        transform: translateY(1px);
-    }
-    to{
-        color: white;
-        transform: translateY(20px);
-    }
 }
