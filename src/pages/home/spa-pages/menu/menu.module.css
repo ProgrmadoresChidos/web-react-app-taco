@@ -6,7 +6,7 @@
 }
 
 .menu_backgroundImage {
-  background-image: url('http://localhost:3000/assets/img/portada-min.jpg');
+  background-image: url('/assets/img/portada-min.jpg');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
