@@ -12,7 +12,7 @@ type MapsProps = {
 const Maps: FunctionComponent<MapsProps> = ({ locales }) => {
 
     const zoom = 12;
-    const API_KEY = 'AaIzaSyDEsK7PQRs48b7eM5eVCaUj4GqEo5eKOE';
+    const API_KEY = process.env.React_App_GOOGLE_API_KEY;
     const center = { lat: 21.885516, lng: -102.291693 }
 
     return (

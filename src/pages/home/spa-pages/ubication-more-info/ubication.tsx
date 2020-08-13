@@ -10,8 +10,6 @@ export default function Ubication() {
         window.scrollTo(0, 0)
     }, [])
 
-    console.info(process.env.React_App_NOMBRE);
-
     const ubicaciones: Ubicaciones[] = [
         {
             nombre: "Roberto",
