@@ -1,8 +1,7 @@
 const { execSync } = require('child_process');
 const { writeFileSync } = require('fs');
 
-// let resp = execSync('heroku config --app=la-app-del-taco-web');
-let resp = execSync('heroku config --app=nestor-webserver-curso-node');
+let resp = execSync('heroku config --app=la-app-del-taco-web');
 resp = resp.toString();
 const info = resp.split('\n');
 let configVars = {};
