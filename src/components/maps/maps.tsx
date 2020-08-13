@@ -3,7 +3,6 @@ import style from './maps.module.css';
 import GoogleMapReact from 'google-map-react';
 import Marker from '../marker/marker';
 import { Ubicaciones } from '../../models/marks/ubicaciones';
-import { environment } from '../../environment/environment';
 
 
 type MapsProps = {
@@ -13,7 +12,8 @@ type MapsProps = {
 const Maps: FunctionComponent<MapsProps> = ({ locales }) => {
 
     const zoom = 12;
-    const API_KEY = environment.GOOGLE_API_KEY;
+    const API_KEY = 'AaIzaSyDEsK7PQRs48b7eM5eVCaUj4GqEo5eKOE';
+    const center = { lat: 21.885516, lng: -102.291693 }
 
     return (
         <div className={style.content}>
@@ -21,7 +21,7 @@ const Maps: FunctionComponent<MapsProps> = ({ locales }) => {
                 <div className={style.maps}>
                     <GoogleMapReact
                         bootstrapURLKeys={{ key: API_KEY }}
-                        defaultCenter={environment.center}
+                        defaultCenter={center}
                         defaultZoom={zoom}
                     >
                         {locales.map((local, i) => <Marker key={i} lat={local.geoLocalización.lat} lng={local.geoLocalización.lng} name={local.nombre}></Marker>)}
