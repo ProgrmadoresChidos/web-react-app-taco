@@ -1,24 +1,21 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
 import style from "./navbar.module.css";
 
-const Navbar = () => {
-
-    const handleClick = (cadena: string) => {
-        console.info(cadena);
-    }
+const Navbar = ({ url }) => {
 
     return (
-        <header className={ `${style.navbar} ${style.navbar_background}` }>
-            <div className={ style.navbar__contentWrapper }>
-                <div className={ `${style.navbar__navOption} ${style.navbar_background} ` } onClick={() => handleClick('Inicio')}>
-                    <p className={ style.navbar__text }>Inicio</p>
-                </div>
-                <div className={ `${style.navbar__navOption} ${style.navbar__background} ${style.navbar_activated}` } onClick={() => handleClick('Ubicación y horarios')}>
-                    <p className={ style.navbar__text }>Ubicación & Horarios</p>
-                </div>
-                <div className={ `${style.navbar__navOption} ${style.navbar_background}` } onClick={() => handleClick('Manú')}>
-                    <p className={ style.navbar__text }>Menú</p>
-                </div>
+        <header className={`${style.navbar} ${style.navbar_background}`}>
+            <div className={style.navbar__contentWrapper}>
+                <NavLink exact to={`${url}`} className={`${style.navbar__navOption} ${style.navbar_background} `} activeClassName={style.navbar_activated}>
+                    <p className={style.navbar__text}>Inicio</p>
+                </NavLink>
+                <NavLink to={`${url}/ubicacion`} className={`${style.navbar__navOption} ${style.navbar__background}`} activeClassName={style.navbar_activated}>
+                    <p className={style.navbar__text}> Ubicación & Horarios</p>
+                </NavLink>
+                <NavLink to={`${url}/menu`} className={`${style.navbar__navOption} ${style.navbar_background}`} activeClassName={style.navbar_activated}>
+                    <p className={style.navbar__text}>Menú</p>
+                </NavLink>
             </div>
         </header>
     );

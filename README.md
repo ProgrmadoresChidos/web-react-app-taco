@@ -4,6 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run dev`
+
+Creates environment variables and runs the app in the development mode.<br />
+You must run this command. 
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
