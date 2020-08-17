@@ -7,16 +7,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
 }
 .container__FormContainer{
     background-color: transparent;
-    margin-top: -70px;
     width: 100%;
     height: 75%;
 }
 .container__FormContainer_position{
     display: flex;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
 }
