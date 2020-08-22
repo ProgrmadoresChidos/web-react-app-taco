@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Yup from 'yup';
 import { Formik, Field, Form } from 'formik';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +16,15 @@ const Signup = () => {
     />;
     const icon_copyRights = <FontAwesomeIcon icon={faCopyright} />;
 
+    const formSchema = Yup.object().shape({
+        confirm_password: Yup.string()
+            .required("Campo requerido")
+            .oneOf(
+                [Yup.ref('password'), null],
+                "Son diferentes"
+            )
+    });
+
     return (
         <div className={`${style.container} ${style.container_position}`}>
             <div className={`${style.container__FormContainer} ${style.container__FormContainer_position}`}>
@@ -24,8 +34,10 @@ const Signup = () => {
                         lastName: '',
                         email: '',
                         password: '',
+                        confirm_password: '',
                         save: false
                     }}
+                    validationSchema={formSchema}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
                             alert(JSON.stringify(values, null, 2));
@@ -82,6 +94,16 @@ const Signup = () => {
                                     className={` ${style.Form__input} ${style.Form__input_event} `}
                                 />
                                 <label htmlFor="password" className={`${style.Form_label}`}>Contraseña</label>
+                            </div>
+                            <div className={`${style.Form__container_large}`}>
+                                <Field
+                                    id="confirm_password"
+                                    name="confirm_password"
+                                    type="password"
+                                    required
+                                    className={` ${style.Form__input} ${style.Form__input_event} `}
+                                />
+                                <label htmlFor="confirm_password" className={`${style.Form_label}`}>Repetir contraseña</label>
                             </div>
                         </div>
                         <div className={`${style.Form__container} ${style.Form__checkbox_position}`}>
