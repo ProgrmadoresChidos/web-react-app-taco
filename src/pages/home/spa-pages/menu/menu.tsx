@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect } from 'react'
 
 // Components
 import { MenuSection } from '../../../../components/menu-section/menu-section';
+import Test from '../../../../components/test/test';
 
 // Styles
 import styles from './menu.module.css';
@@ -35,6 +36,7 @@ export const Menu: FunctionComponent = () => {
     <div className={styles.menu}>
       <div className={styles.menu_backgroundImage} />
       <div className={styles.menu__wrapper}>
+        <Test />
         <div className={styles.menu__title}>
           <h3>Menu</h3>
           <p className={styles.menu_text}>Haz que las personas se emocionen por tu menú y tu comida. Para editar este texto y hacerlo propio, haz clic aquí.</p>
