@@ -26,10 +26,20 @@ const Signup = () => {
     const formSchema = Yup.object().shape({
         firstName: Yup.string()
             .required("Campo requerido")
-            // .matches("/^[a-zA-Z][a-zA-Z\s]*$/", 'Caracteres no validos')
+            .matches(/^[a-zA-Z][a-zA-Z\s]*$/, 'Solo letras y espacios')
+        ,
+        lastName: Yup.string()
+            .required("Campo requerido")
+            .matches(/^[a-zA-Z][a-zA-Z\s]*$/, 'Solo letras y espacios')
+        ,
+        email: Yup.string()
+            .email('Correo no valido')
+        ,
+        password: Yup.string()
+            .required("Campo requerido")
+            .matches(/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?\W).*$/, 'Contraseña débil')
         ,
         confirm_password: Yup.string()
-            .required("Campo requerido")
             .oneOf(
                 [Yup.ref('password'), null],
                 "Las contraseñas no son iguales"
@@ -66,59 +76,74 @@ const Signup = () => {
                         </div>
                         <div className={`${style.Form__container}`}>
                             <div className={`${style.Form__container_short}`}>
-                                <Field
-                                    id="firstName"
-                                    name="firstName"
-                                    type="text"
-                                    required
-                                    className={` ${style.Form__input} ${style.Form__input_event} `}
-                                />
-                                <label htmlFor="firstName" className={`${style.Form_label}`}>Nombre</label>
+                                <div className={`${style.Form__content}`}>
+
+                                    <Field
+                                        id="firstName"
+                                        name="firstName"
+                                        type="text"
+                                        required
+                                        className={` ${style.Form__input} ${style.Form__input_event} `}
+                                    />
+                                    <label htmlFor="firstName" className={`${style.Form_label}`}>Nombre</label>
+                                </div>
+                                <ErrorMessage name="firstName" render={(msg) => <div className={`${style.ErrroMessage}`}>{msg}</div>} />
                             </div>
 
                             <div className={`${style.Form__container_short}`}>
-                                <Field
-                                    id="lastName"
-                                    name="lastName"
-                                    type="text"
-                                    required
-                                    className={` ${style.Form__input} ${style.Form__input_event} `}
-                                />
-                                <label htmlFor="lastName" className={`${style.Form_label}`}>Apellidos</label>
+                                <div className={`${style.Form__content}`}>
+                                    <Field
+                                        id="lastName"
+                                        name="lastName"
+                                        type="text"
+                                        required
+                                        className={` ${style.Form__input} ${style.Form__input_event} `}
+                                    />
+                                    <label htmlFor="lastName" className={`${style.Form_label}`}>Apellidos</label>
+                                </div>
+                                <ErrorMessage name="lastName" render={(msg) => <div className={`${style.ErrroMessage}`}>{msg}</div>} />
                             </div>
                         </div>
                         <div className={`${style.Form__container}`}>
                             <div className={`${style.Form__container_large}`}>
-                                <Field
-                                    id="email"
-                                    name="email"
-                                    type="text"
-                                    required
-                                    className={` ${style.Form__input} ${style.Form__input_event} `}
-                                />
-                                <label htmlFor="email" className={`${style.Form_label}`}>Correo</label>
+                                <div className={`${style.Form__content}`}>
+                                    <Field
+                                        id="email"
+                                        name="email"
+                                        type="text"
+                                        required
+                                        className={` ${style.Form__input} ${style.Form__input_event} `}
+                                    />
+                                    <label htmlFor="email" className={`${style.Form_label}`}>Correo</label>
+                                </div>
+                                <ErrorMessage name="email" render={(msg) => <div className={`${style.ErrroMessage}`}>{msg}</div>} />
                             </div>
                             <div className={`${style.Form__container_large}`}>
-                                <Field
-                                    id="password"
-                                    name="password"
-                                    type="password"
-                                    required
-                                    className={` ${style.Form__input} ${style.Form__input_event} `}
-                                />
-                                <label htmlFor="password" className={`${style.Form_label}`}>Contraseña</label>
+                                <div className={`${style.Form__content}`}>
+                                    <Field
+                                        id="password"
+                                        name="password"
+                                        type="password"
+                                        required
+                                        className={` ${style.Form__input} ${style.Form__input_event} `}
+                                    />
+                                    <label htmlFor="password" className={`${style.Form_label}`}>Contraseña</label>
+                                </div>
+                                <ErrorMessage name="password" render={(msg) => <div className={`${style.ErrroMessage}`}>{msg}</div>} />
                             </div>
                             <div className={`${style.Form__container_large}`}>
-                                <Field
-                                    id="confirm_password"
-                                    name="confirm_password"
-                                    type="password"
-                                    required
-                                    className={` ${style.Form__input} ${style.Form__input_event} `}
-                                />
-                                <label htmlFor="confirm_password" className={`${style.Form_label}`}>Repetir contraseña</label>
+                                <div className={`${style.Form__content}`}>
+                                    <Field
+                                        id="confirm_password"
+                                        name="confirm_password"
+                                        type="password"
+                                        required
+                                        className={` ${style.Form__input} ${style.Form__input_event} `}
+                                    />
+                                    <label htmlFor="confirm_password" className={`${style.Form_label}`}>Repetir contraseña</label>
+                                </div>
+                                <ErrorMessage name="confirm_password" render={(msg) => <div className={`${style.ErrroMessage}`}>{msg}</div>} />
                             </div>
-                            {/* <ErrorMessage name="confirm_password" render={(msg) => <div>{msg}</div>} /> */}
                         </div>
                         <div className={`${style.Form__container} ${style.Form__checkbox_position}`}>
                             <label htmlFor="save" className={`${style.Form__checkbox_text}`}>

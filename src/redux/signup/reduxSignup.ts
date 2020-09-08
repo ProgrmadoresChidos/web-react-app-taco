@@ -30,16 +30,15 @@ export const signupSlice = createSlice({
 
 export const { fetching, success, error } = signupSlice.actions;
 
-export const signup = ({ firstName, lastName, email, password }) => async dispatch => {
+export const signup = ({ firstName: name, lastName, email, password }) => async dispatch => {
     dispatch(fetching());
     try {
         const res = await axios.post('http://localhost:8080/auth/signup', {
-            name: firstName,
+            name,
             lastName,
             email,
             password
         })
-        console.info('primero')
         dispatch(success({
             user: res.data
         }))
