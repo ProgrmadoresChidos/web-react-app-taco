@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import testReducer from './features/testSlice';
+import signupReducer from './signup/reduxSignup';
 
 export default configureStore({
   reducer: {
-    test: testReducer
+    test: testReducer,
+    signup: signupReducer
   }
 });

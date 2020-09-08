@@ -1,13 +1,20 @@
 import React from 'react';
 import * as Yup from 'yup';
-import { Formik, Field, Form } from 'formik';
+import { useSelector, useDispatch } from 'react-redux';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faCopyright } from '@fortawesome/free-solid-svg-icons';
 
+import { selectSignupFetching, selectSignupUser, selectSignupError, signup } from '../../redux/signup/reduxSignup';
 import style from './signup.module.css';
 
 const Signup = () => {
+
+    const signupFetching = useSelector(selectSignupFetching);
+    const signupUser = useSelector(selectSignupUser);
+    const signupError = useSelector(selectSignupError);
+    const dispatch = useDispatch();
 
     const icon = <FontAwesomeIcon
         icon={faUserCircle}
@@ -17,11 +24,15 @@ const Signup = () => {
     const icon_copyRights = <FontAwesomeIcon icon={faCopyright} />;
 
     const formSchema = Yup.object().shape({
+        firstName: Yup.string()
+            .required("Campo requerido")
+            // .matches("/^[a-zA-Z][a-zA-Z\s]*$/", 'Caracteres no validos')
+        ,
         confirm_password: Yup.string()
             .required("Campo requerido")
             .oneOf(
                 [Yup.ref('password'), null],
-                "Son diferentes"
+                "Las contraseñas no son iguales"
             )
     });
 
@@ -40,7 +51,8 @@ const Signup = () => {
                     validationSchema={formSchema}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
+                            dispatch(signup(values))
+                            console.info('segundo')
                             setSubmitting(false);
                         }, 400);
                     }}
@@ -63,6 +75,7 @@ const Signup = () => {
                                 />
                                 <label htmlFor="firstName" className={`${style.Form_label}`}>Nombre</label>
                             </div>
+
                             <div className={`${style.Form__container_short}`}>
                                 <Field
                                     id="lastName"
@@ -105,6 +118,7 @@ const Signup = () => {
                                 />
                                 <label htmlFor="confirm_password" className={`${style.Form_label}`}>Repetir contraseña</label>
                             </div>
+                            {/* <ErrorMessage name="confirm_password" render={(msg) => <div>{msg}</div>} /> */}
                         </div>
                         <div className={`${style.Form__container} ${style.Form__checkbox_position}`}>
                             <label htmlFor="save" className={`${style.Form__checkbox_text}`}>
