@@ -44,6 +44,13 @@
     width: 100%;
     height: fit-content;
 }
+.Form__error {
+    padding: 0 10px;
+}
+.Form__error_text {
+    color: red;
+    margin: 0;
+}
 .Form__input{
     font-weight: bold;
     color: white;
