@@ -42,7 +42,7 @@ export const login = (email, password) => async dispatch => {
     })
     setTimeout(() => {
       dispatch(success({
-        user: res.data.user,
+        user: res.data,
       }));
     }, 3000);
   } catch (err) {

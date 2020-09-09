@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as Yup from 'yup';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faCopyright } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
-import { selectSignupFetching, selectSignupUser, selectSignupError, signup } from '../../redux/signup/reduxSignup';
+import { selectSignupFetching, selectSignupUser, selectSignupError, signup } from '../../redux/signup/signupSlice';
 import style from './signup.module.css';
+import './theme-dark/dark.min.css';
 
 const Signup = () => {
 
@@ -15,6 +18,31 @@ const Signup = () => {
     const signupUser = useSelector(selectSignupUser);
     const signupError = useSelector(selectSignupError);
     const dispatch = useDispatch();
+    const histroy = useHistory();
+    const MySwal = withReactContent(Swal);
+
+    useEffect(() => {
+        if (signupUser && !signupFetching && !signupError) {
+            MySwal.close();
+            histroy.push('/');
+        } else if (signupError) {
+            const messages = Object.values(signupError.message).reduce((acc, value) => (acc = acc + `${value}`), "")
+            MySwal.fire({
+                title: 'Error de registro',
+                text: messages,
+                icon: 'error',
+                allowOutsideClick: false
+            })
+        } else if (signupFetching) {
+            MySwal.fire({
+                title: 'Espere..',
+                text: 'Guradando Información',
+                icon: 'info',
+                allowOutsideClick: false
+            })
+            MySwal.showLoading();
+        }
+    })
 
     const icon = <FontAwesomeIcon
         icon={faUserCircle}
@@ -60,11 +88,8 @@ const Signup = () => {
                     }}
                     validationSchema={formSchema}
                     onSubmit={(values, { setSubmitting }) => {
-                        setTimeout(() => {
-                            dispatch(signup(values))
-                            console.info('segundo')
-                            setSubmitting(false);
-                        }, 400);
+                        dispatch(signup(values));
+                        setSubmitting(false);
                     }}
                 >
                     <Form className={`${style.Form} ${style.Form__position}`}>
@@ -97,6 +122,7 @@ const Signup = () => {
                                         name="lastName"
                                         type="text"
                                         required
+                                        disabled={signupFetching}
                                         className={` ${style.Form__input} ${style.Form__input_event} `}
                                     />
                                     <label htmlFor="lastName" className={`${style.Form_label}`}>Apellidos</label>
@@ -112,6 +138,7 @@ const Signup = () => {
                                         name="email"
                                         type="text"
                                         required
+                                        disabled={signupFetching}
                                         className={` ${style.Form__input} ${style.Form__input_event} `}
                                     />
                                     <label htmlFor="email" className={`${style.Form_label}`}>Correo</label>
@@ -125,6 +152,7 @@ const Signup = () => {
                                         name="password"
                                         type="password"
                                         required
+                                        disabled={signupFetching}
                                         className={` ${style.Form__input} ${style.Form__input_event} `}
                                     />
                                     <label htmlFor="password" className={`${style.Form_label}`}>Contraseña</label>
@@ -138,6 +166,7 @@ const Signup = () => {
                                         name="confirm_password"
                                         type="password"
                                         required
+                                        disabled={signupFetching}
                                         className={` ${style.Form__input} ${style.Form__input_event} `}
                                     />
                                     <label htmlFor="confirm_password" className={`${style.Form_label}`}>Repetir contraseña</label>
@@ -153,7 +182,10 @@ const Signup = () => {
                             </label>
                         </div>
                         <div className={style.Form__container}>
-                            <button type='submit' className={style.Form__button}>Registrar</button>
+                            <button
+                                type='submit'
+                                disabled={signupFetching}
+                                className={style.Form__button}>Registrar</button>
                         </div>
                         <div className={`${style.Form__container} ${style.Form__nav_position} `}>
                             <NavLink className={`${style.Form__nav}`} to="/login">Tienes una cuenta? Inicia Sesión</NavLink>
