@@ -10,7 +10,7 @@ import withReactContent from 'sweetalert2-react-content'
 
 import { selectSignupFetching, selectSignupUser, selectSignupError, signup } from '../../redux/signup/signupSlice';
 import style from './signup.module.css';
-import './theme-dark/dark.min.css';
+
 
 const Signup = () => {
 
