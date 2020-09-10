@@ -12,7 +12,7 @@ import {
     selectLoginPayload,
     selectLoginError,
     login
-} from '../../redux/auth/loginSlice';
+} from '../../redux/login/loginSlice';
 
 import style from './login.module.css';
 
