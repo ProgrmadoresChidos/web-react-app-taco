@@ -5,7 +5,10 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import store from './redux/store';
+import axios from 'axios';
 
+axios.defaults.baseURL = process.env.React_App_API_URL;
+axios.defaults.withCredentials = true;
 
 ReactDOM.render(
   <Provider store={store}>

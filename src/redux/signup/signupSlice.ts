@@ -33,23 +33,21 @@ export const signup = ({ firstName: name, lastName, email, password }) => async 
     dispatch(fetching());
     try {
 
-        const res = await axios.post(`${process.env.React_App_API_URL}/auth/signup`,
+        const res = await axios.post('/auth/signup',
             {
                 name,
                 lastName,
                 email,
                 password
-            },
-            {
-                withCredentials: true
             }
         )
         dispatch(success({
             user: res.data
         }))
     } catch (err) {
+        const errorMessage = !!err.response ? err.response.data : err;
         dispatch(error({
-            error: err.response.data,
+            error: errorMessage,
         }))
     }
 }
