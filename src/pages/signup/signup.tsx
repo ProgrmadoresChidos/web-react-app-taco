@@ -61,6 +61,7 @@ const Signup = () => {
             .matches(/^[a-zA-Z][a-zA-Z\s]*$/, 'Solo letras y espacios')
         ,
         email: Yup.string()
+            .required("Campo requerido")
             .email('Correo no valido')
         ,
         password: Yup.string()
