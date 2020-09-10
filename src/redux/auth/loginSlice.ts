@@ -33,10 +33,15 @@ export const login = (email, password) => async dispatch => {
   dispatch(fetching());
   try {
     // TODO Crear una variable en env para la url de la api
-    const resp = await axios.post('http://localhost:8080/auth/login', {
-      email,
-      password,
-    });
+    const resp = await axios.post('http://localhost:8080/auth/login',
+      {
+        email,
+        password,
+      },
+      {
+        withCredentials: true
+      }
+    );
     console.log(resp);
     dispatch(success(resp.data));
   } catch (err) {
