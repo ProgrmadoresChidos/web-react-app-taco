@@ -38,8 +38,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "node config-vars.ts && npm start"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

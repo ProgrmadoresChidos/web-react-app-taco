@@ -33,7 +33,7 @@ export const login = (email, password) => async dispatch => {
   dispatch(fetching());
   try {
     // TODO Crear una variable en env para la url de la api
-    const resp = await axios.post('http://localhost:8080/auth/login',
+    const resp = await axios.post(`${process.env.React_App_API_URL}/auth/login`,
       {
         email,
         password,

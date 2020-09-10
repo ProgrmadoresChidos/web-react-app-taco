@@ -33,7 +33,7 @@ export const signup = ({ firstName: name, lastName, email, password }) => async 
     dispatch(fetching());
     try {
 
-        const res = await axios.post('http://localhost:8080/auth/signup',
+        const res = await axios.post(`${process.env.React_App_API_URL}/auth/signup`,
             {
                 name,
                 lastName,
