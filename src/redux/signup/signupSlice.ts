@@ -48,7 +48,6 @@ export const signup = ({ firstName: name, lastName, email, password }) => async 
             user: res.data
         }))
     } catch (err) {
-        console.error(err);
         dispatch(error({
             error: err.response.data,
         }))
