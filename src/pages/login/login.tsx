@@ -84,7 +84,7 @@ export default function Login() {
                     }}
                     validationSchema={formSchema}
                     onSubmit={(values, { setSubmitting }) => {
-                        dispatch(login(values.email, values.password));
+                        dispatch(login(values.email, values.password, values.save));
                         setSubmitting(false);
                     }}
                 >
