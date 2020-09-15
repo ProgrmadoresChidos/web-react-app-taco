@@ -1,14 +1,18 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { selectAuthIsLoggedIn } from '../redux/auth/auth';
 
 export default function RouteWrapper({ component, isPrivate = false, redirect = '', ...rest }) {
 
-    //const signed = true;
+    const isLoggedIn = useSelector(selectAuthIsLoggedIn);
 
-    // if (isPrivate && !signed) {
-    //     return <Redirect to="/" />;
-    // }
+    // const isLog = true;
+
+    if (isPrivate && !isLoggedIn) {
+        return <Redirect to="/signup" />;
+    }
 
     // if (!isPrivate && signed) {
     //     return <Redirect to="/menu" />;

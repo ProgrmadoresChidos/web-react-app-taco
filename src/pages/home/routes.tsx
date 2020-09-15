@@ -15,6 +15,7 @@ export default function Routes({ path }) {
         },
         {
             path: `${path}/ubicacion`,
+            isPrivate: true,
             component: Ubication,
         },
         {

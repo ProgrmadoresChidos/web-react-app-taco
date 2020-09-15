@@ -8,19 +8,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import {
-    selectLoginFetching,
-    selectLoginPayload,
-    selectLoginError,
-    login
-} from '../../redux/login/loginSlice';
+    selectAuthFetching,
+    selectAuthPayload,
+    selectAuthError,
+    selectAuthIsLoggedIn
+} from '../../redux/auth/auth';
+import { login } from '../../services/auth/auth';
 
 import style from './login.module.css';
 
 
 export default function Login() {
-    const loginFetching = useSelector(selectLoginFetching);
-    const loginPayload = useSelector(selectLoginPayload);
-    const loginError = useSelector(selectLoginError);
+    const loginFetching = useSelector(selectAuthFetching);
+    const loginPayload = useSelector(selectAuthPayload);
+    const loginError = useSelector(selectAuthError);
+    const isLoggedIn = useSelector(selectAuthIsLoggedIn);
     const dispatch = useDispatch();
     const history = useHistory();
     const MySwal = withReactContent(Swal);
@@ -45,6 +47,8 @@ export default function Login() {
                 allowOutsideClick: false
             })
             MySwal.showLoading();
+        } else if (isLoggedIn) {
+            history.push('/inicio');
         }
     });
 

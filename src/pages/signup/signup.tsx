@@ -8,15 +8,26 @@ import { faUserCircle, faCopyright } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-import { selectSignupFetching, selectSignupUser, selectSignupError, signup } from '../../redux/signup/signupSlice';
+// import { selectSignupFetching, selectSignupUser, selectSignupError, signup } from '../../redux/signup/signupSlice';
+import {
+    selectAuthFetching,
+    selectAuthPayload,
+    selectAuthError,
+    selectAuthIsLoggedIn
+} from '../../redux/auth/auth';
+import { signup } from '../../services/auth/auth';
 import style from './signup.module.css';
 
 
 const Signup = () => {
 
-    const signupFetching = useSelector(selectSignupFetching);
-    const signupUser = useSelector(selectSignupUser);
-    const signupError = useSelector(selectSignupError);
+    // const signupFetching = useSelector(selectSignupFetching);
+    // const signupUser = useSelector(selectSignupUser);
+    // const signupError = useSelector(selectSignupError);
+    const signupFetching = useSelector(selectAuthFetching);
+    const signupUser = useSelector(selectAuthPayload);
+    const signupError = useSelector(selectAuthError);
+    const isLoggedIn = useSelector(selectAuthIsLoggedIn);
     const dispatch = useDispatch();
     const histroy = useHistory();
     const MySwal = withReactContent(Swal);
@@ -41,6 +52,8 @@ const Signup = () => {
                 allowOutsideClick: false
             })
             MySwal.showLoading();
+        } else if (isLoggedIn) {
+            histroy.push('/inicio');
         }
     })
 
