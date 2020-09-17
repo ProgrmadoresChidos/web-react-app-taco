@@ -40,28 +40,6 @@ export const loginSlice = createSlice({
 
 export const { fetching, success, logout, error } = loginSlice.actions;
 
-// export const login = (email, password) => async dispatch => {
-//   dispatch(fetching());
-//   try {
-//     // TODO Crear una variable en env para la url de la api
-//     const resp = await axios.post('/auth/login',
-//       {
-//         email,
-//         password,
-//       }
-//     );
-//     console.log(resp);
-//     dispatch(success(resp.data));
-//     saveUser(resp.data);
-//   } catch (err) {
-//     console.log(err.name);
-//     console.log(err.message);
-//     const errorMessage = !!err.response ? err.response.data : err;
-//     console.log(errorMessage);
-//     dispatch(error(errorMessage));
-//   }
-// };
-
 export const selectAuthFetching = state => state.auth.fetching;
 export const selectAuthPayload = state => state.auth.payload;
 export const selectAuthError = state => state.auth.error;
