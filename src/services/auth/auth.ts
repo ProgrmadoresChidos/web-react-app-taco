@@ -14,10 +14,7 @@ export const login = (email, password, save) => async dispatch => {
     dispatch(success(resp.data));
     saveUser(resp.data, save);
   } catch (err) {
-    console.log(err.name);
-    console.log(err.message);
     const errorMessage = !!err.response ? err.response.data : err;
-    console.log(errorMessage);
     dispatch(error(errorMessage));
   }
 };
